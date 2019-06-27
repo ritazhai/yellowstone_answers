@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>FAQ bot</title>
+    </head>
+    <!--<body>-->
+        <!--<h3>Question:</h3>-->
+            <!--<div>{{ question }}</div>-->
+
+        <!--<h3>Bot:</h3>-->
+            <!--<div>{{ answer }}</div>-->
+    <!--</body>-->
+    <body>
+        <form action = "http://localhost:9999/predict" method = "POST", id="form1">
+            <p>
+                <textarea name="question" rows="4" cols="50">{{ question }}</textarea>
+            </p>
+        </form>
+        <button type="submit" form="form1" value="submit" class="btn btn-info btn-rounded btn-sm waves-effect waves-light float-right">Send</button>
+        <p>
+            <textarea name="answer" rows="4" cols="50">{{ answer }}</textarea>
+        </p>
+    </body>
+</html>

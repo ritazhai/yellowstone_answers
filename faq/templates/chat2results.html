@@ -1,0 +1,179 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat1.css') }}">
+</head>
+<body>
+<script src="static/css/script.js"></script>
+<script>
+function myFunction(dots, more, myBtn) {
+  var dots = document.getElementById(dots);
+  var moreText = document.getElementById(more);
+  var btnText = document.getElementById(myBtn);
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+</script>
+<div class="container">
+    <div class="messaging">
+        <div class="inbox_msg">
+            <div class="inbox_people">
+                <div class="headind_srch">
+                    <div class="recent_heading">
+                    </div>
+                </div>
+                <div class="inbox_chat">
+                    <div class="chat_list active_chat">
+                        <div class="chat_people">
+                            <div class="chat_img"><img
+                                    src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                    alt="sunil"></div>
+                            <div class="chat_ib">
+                                <h5>YA!<span class="chat_date"></span></h5>
+                                <p>I am here to answer your questions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mesgs">
+                <div class="msg_history" id="out">
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>Hello, this is Ya! ask me any question!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outgoing_msg">
+                        <div class="sent_msg">
+                            <p>{{ question1 }}</p>
+                        </div>
+                    </div>
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>{{ answer1[0][:80] }}<span id="dots0" style="display: inline">...</span><span id="more0" style="display: none">{{ answer1[0][80:] }}</span></p>
+                                <button onclick="myFunction('dots0', 'more0', 'myBtn0')" id="myBtn0" style="font-size:10px">Read more</button>
+                                <button style="font-size:10px">Bingo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>{{ answer1[1][:80] }}<span id="dots1" style="display: inline">...</span><span id="more1" style="display: none">{{ answer1[1][80:] }}</span></p>
+                                <button onclick="myFunction('dots1', 'more1', 'myBtn1')" id="myBtn1" style="font-size:10px">Read more</button>
+                                <button style="font-size:10px">Bingo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>{{ answer1[2][:80] }}<span id="dots2" style="display: inline">...</span><span id="more2" style="display: none">{{ answer1[2][80:] }}</span></p>
+                                <button onclick="myFunction('dots2', 'more2', 'myBtn2')" id="myBtn2" style="font-size:10px">Read more</button>
+                                <button style="font-size:10px">Bingo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>{{ answer1[3] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outgoing_msg">
+                        <div class="sent_msg">
+                            <p>{{ question2 }}</p>
+                        </div>
+                    </div>
+
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>{{ answer2[0][:80] }}<span id="dots3" style="display: inline">...</span><span id="more3" style="display: none">{{ answer2[0][80:] }}</span></p>
+                                <button onclick="myFunction('dots3', 'more3', 'myBtn3')" id="myBtn3" style="font-size:10px">Read more</button>
+                                <button style="font-size:10px">Bingo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>{{ answer2[1][:80] }}<span id="dots4" style="display: inline">...</span><span id="more4" style="display: none">{{ answer2[1][80:] }}</span></p>
+                                <button onclick="myFunction('dots4', 'more4', 'myBtn4')" id="myBtn4" style="font-size:10px">Read more</button>
+                                <button style="font-size:10px">Bingo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>{{ answer2[2][:80] }}<span id="dots5" style="display: inline">...</span><span id="more5" style="display: none">{{ answer2[2][80:] }}</span></p>
+                                <button onclick="myFunction('dots5', 'more5', 'myBtn5')" id="myBtn5" style="font-size:10px">Read more</button>
+                                <button style="font-size:10px">Bingo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="incoming_msg">
+                        <div class="incoming_msg_img"><img src="https://vignette1.wikia.nocookie.net/hanna-barbera/images/9/93/Yogi_Bear.png/revision/latest?cb=20160610150938"
+                                                           alt="sunil"></div>
+                        <div class="received_msg">
+                            <div class="received_withd_msg">
+                                <p>{{ answer2[3] }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="type_msg">
+                    <div class="input_msg_write">
+                        <!--<input type="text" class="write_msg" placeholder="Type a message"/>-->
+                        <form action="http://localhost:9999/predict" method="POST" id="form1">
+                            <p>
+                                <input type="text" class="write_msg" name="question" placeholder="Type a message"/>
+                            </p>
+                        </form>
+                        <button type="submit" form="form1" value="submit" class="msg_send_btn">
+                            <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="text-center top_spac"> Design by <a target="_blank" href="#">Rita Zhai</a></p>
+</div>
+</body>
+</html>
