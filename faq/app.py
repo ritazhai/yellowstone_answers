@@ -29,6 +29,9 @@ def predict():
     elif request.method == 'POST':
         # question = request.json['challenge']
         question = request.form['question']
+    with open("q_log.txt", "a+") as f:
+        f.write(question + "\n")
+
     prediction = model.answer(question)
     # prediction = "\n".join(prediction)
     questions.append(question)
