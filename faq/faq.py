@@ -11,12 +11,12 @@ FALL_BACK = "Doesn't answer your question? Sorry I am still learning! Please try
 
 
 class BertEncoder:
-    # def __init__(self):
-        # self.bc = BertClient()
+    def __init__(self):
+        self.bc = BertClient()
 
     def encode(self, query):
-        # emb = self.bc.encode([query])[0]
-        emb = np.random.randn(768)
+        emb = self.bc.encode([query])[0]
+        # emb = np.random.randn(768)
         return emb
 
 
